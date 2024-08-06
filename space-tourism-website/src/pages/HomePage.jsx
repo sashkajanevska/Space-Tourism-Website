@@ -11,9 +11,7 @@ export default function HomePage() {
           experience!!
         </p>
       </div>
-      <div className="home-btn">
-        <button>Explore</button>
-      </div>
+      <button className="home-btn">EXPLORE</button>
     </div>
   );
 }
