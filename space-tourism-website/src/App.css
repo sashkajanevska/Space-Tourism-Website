@@ -96,7 +96,7 @@ nav a.active {
 nav a > span {
   font-weight: 700;
   pointer-events: none;
-}
+} 
 
 .home-container {
   background-image: url("./images/home/background-home-desktop.jpg");
