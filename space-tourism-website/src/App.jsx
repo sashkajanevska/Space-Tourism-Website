@@ -1,8 +1,6 @@
-import { useState } from "react";
 import "./App.css";
-import SiteData from "./data/data.json";
-import Header from "./components/Header";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import Header from "./components/Header";
 import HomePage from "./pages/HomePage";
 import DestinationPage from "./pages/DestinationPage";
 import CrewPage from "./pages/CrewPage";
@@ -19,9 +17,6 @@ function Root() {
 }
 
 function App() {
-  // const [data, setData] = useState(SiteData);
-  // console.log(data);
-
   const router = createBrowserRouter([
     {
       path: "/",
@@ -32,15 +27,15 @@ function App() {
           element: <HomePage />,
         },
         {
-          path: "/destination",
+          path: "destination",
           element: <DestinationPage />,
         },
         {
-          path: "/crew",
+          path: "crew",
           element: <CrewPage />,
         },
         {
-          path: "/technology",
+          path: "technology",
           element: <TechnologyPage />,
         },
       ],
@@ -48,11 +43,7 @@ function App() {
   ]);
   return (
     <>
-      {/* {data.destinations.map((obj) => (
-        <img src={obj.images.png} alt="" key={obj.name} />
-      ))} */}
-
-      <RouterProvider router={router}></RouterProvider>
+      <RouterProvider router={router} />
     </>
   );
 }
