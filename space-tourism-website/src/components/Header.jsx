@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 export default function Header() {
   return (
     <div className="header">
-      <img src="src/images/shared/logo.svg" alt="logo" />
+      <img src="/src/images/shared/logo.svg" alt="logo" />
       <div className="header-inner">
         <hr />
         <div className="nav-box">

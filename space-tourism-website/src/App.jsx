@@ -5,7 +5,9 @@ import HomePage from "./pages/HomePage";
 import DestinationPage from "./pages/DestinationPage";
 import CrewPage from "./pages/CrewPage";
 import TechnologyPage from "./pages/TechnologyPage";
-
+import Destination from "./components/Destination";
+import Crew from "./components/Crew";
+import Technology from "./components/Technology";
 
 function Root() {
   return (
@@ -29,18 +31,69 @@ function App() {
         {
           path: "destination",
           element: <DestinationPage />,
+          children: [
+            {
+              path: "moon",
+              element: <Destination />,
+            },
+            {
+              path: "mars",
+              element: <Destination />,
+            },
+            {
+              path: "europa",
+              element: <Destination />,
+            },
+            {
+              path: "titan",
+              element: <Destination />,
+            },
+          ],
         },
         {
           path: "crew",
           element: <CrewPage />,
+          children: [
+            {
+              path: "commander",
+              element: <Crew />,
+            },
+            {
+              path: "mission_specialist",
+              element: <Crew />,
+            },
+            {
+              path: "pilot",
+              element: <Crew />,
+            },
+            {
+              path: "flight_engineer",
+              element: <Crew />,
+            },
+          ],
         },
         {
           path: "technology",
           element: <TechnologyPage />,
+          children: [
+            {
+              path: "launch_vehicle",
+              element: <Technology />,
+            },
+            {
+              path: "spaceport",
+              element: <Technology />,
+            },
+            {
+              path: "space_capsule",
+              element: <Technology />,
+            },
+          ],
         },
       ],
     },
   ]);
+
   return (
     <>
       <RouterProvider router={router} />
