@@ -1,13 +1,13 @@
-import { useState } from "react";
 import "./App.css";
-import SiteData from "./data/data.json";
-import Header from "./components/Header";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import Header from "./components/Header";
 import HomePage from "./pages/HomePage";
 import DestinationPage from "./pages/DestinationPage";
 import CrewPage from "./pages/CrewPage";
 import TechnologyPage from "./pages/TechnologyPage";
-
+import Destination from "./components/Destination";
+import Crew from "./components/Crew";
+import Technology from "./components/Technology";
 
 function Root() {
   return (
@@ -19,9 +19,6 @@ function Root() {
 }
 
 function App() {
-  // const [data, setData] = useState(SiteData);
-  // console.log(data);
-
   const router = createBrowserRouter([
     {
       path: "/",
@@ -32,27 +29,74 @@ function App() {
           element: <HomePage />,
         },
         {
-          path: "/destination",
+          path: "destination",
           element: <DestinationPage />,
+          children: [
+            {
+              path: "moon",
+              element: <Destination />,
+            },
+            {
+              path: "mars",
+              element: <Destination />,
+            },
+            {
+              path: "europa",
+              element: <Destination />,
+            },
+            {
+              path: "titan",
+              element: <Destination />,
+            },
+          ],
         },
         {
-          path: "/crew",
+          path: "crew",
           element: <CrewPage />,
+          children: [
+            {
+              path: "commander",
+              element: <Crew />,
+            },
+            {
+              path: "mission_specialist",
+              element: <Crew />,
+            },
+            {
+              path: "pilot",
+              element: <Crew />,
+            },
+            {
+              path: "flight_engineer",
+              element: <Crew />,
+            },
+          ],
         },
         {
-          path: "/technology",
+          path: "technology",
           element: <TechnologyPage />,
+          children: [
+            {
+              path: "launch_vehicle",
+              element: <Technology />,
+            },
+            {
+              path: "spaceport",
+              element: <Technology />,
+            },
+            {
+              path: "space_capsule",
+              element: <Technology />,
+            },
+          ],
         },
       ],
     },
   ]);
+
   return (
     <>
-      {/* {data.destinations.map((obj) => (
-        <img src={obj.images.png} alt="" key={obj.name} />
-      ))} */}
-
-      <RouterProvider router={router}></RouterProvider>
+      <RouterProvider router={router} />
     </>
   );
 }
