@@ -1,64 +1,34 @@
+import { useEffect, useState } from "react";
 import initialData from "../data/data.json";
-import { useState } from "react";
+import { useNavigate, Outlet } from "react-router-dom";
 
 export default function DestinationPage() {
-  const [data, setData] = useState(initialData);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  let obj = data.destinations[currentIndex];
-  let currentImg = obj.images.png;
-  let currentName = obj.name;
-  let currentDescr = obj.description;
-  let currentDist = obj.distance;
-  let currentTravel = obj.travel;
+  const [data, setData] = useState(initialData.destinations);
+  const savedIndex = JSON.parse(localStorage.getItem("destPageIndex"));
+  const initialIndex = savedIndex !== null ? savedIndex : 0;
+  const [currentIndex, setCurrentIndex] = useState(initialIndex);
+  const navigate = useNavigate();
 
-  const Tabs = () => {
-    return (
-      <ul className="dest-tabs">
-        {data.destinations.map((obj, index) => (
-          <li key={index}>
-            <a
-              className={index === currentIndex ? "active" : ""}
-              onClick={() => {
-                setCurrentIndex(index);
-              }}
-            >
-              {obj.name.toUpperCase()}
-            </a>
-          </li>
-        ))}
-      </ul>
-    );
-  };
+  console.log("Destination Page");
+
+  useEffect(() => {
+    console.log("Mount");
+    localStorage.setItem("destPageIndex", currentIndex);
+
+    let destName = data[currentIndex].name.toLowerCase();
+    navigate("/destination/" + destName);
+
+    return () => {
+      console.log("Unmount");
+      localStorage.setItem("destPageIndex", JSON.stringify(null));
+    };
+  }, [currentIndex]);
 
   return (
-    <div className="dest-container">
-      <div className="dest-title">
-        <h2>
-          <span>01</span>PICK YOUR DESTINATION
-        </h2>
-      </div>
-
-      <div className="dest-inner">
-        <div className="dest-img">
-          <img src={currentImg} alt={currentName} />
-        </div>
-        <div className="dest-text-content">
-          <Tabs />
-          <h1>{currentName.toUpperCase()}</h1>
-          <p>{currentDescr}</p>
-          <hr />
-          <div>
-            <div className="dest-distance">
-              <p>AVG. DISTANCE</p>
-              <h2>{currentDist.toUpperCase()}</h2>
-            </div>
-            <div className="dest-travel-time">
-              <p>EST. TRAVEL TIME</p>
-              <h2>{currentTravel.toUpperCase()}</h2>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <>
+      <Outlet context={[data, currentIndex, setCurrentIndex]} />
+      {console.log("Child component")}
+      {console.log(currentIndex)}
+    </>
   );
 }
