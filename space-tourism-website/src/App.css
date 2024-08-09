@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Bellefair&family=Commissioner:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bellefair&family=Commissioner:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
   box-sizing: border-box;
@@ -11,8 +12,34 @@ body {
   height: 100%;
 }
 
-#root {
-  background-image: url("./images/home/background-home-desktop.jpg");
+h1 {
+  font-family: "Bellefair", sans-serif;
+  font-weight: 400;
+  color: hsl(0, 0%, 100%);
+}
+
+h2 {
+  font-family: "Bellefair", sans-serif;
+  font-weight: 400;
+  color: hsl(0, 0%, 100%);
+}
+
+h3 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 400;
+  color: hsl(0, 0%, 100%);
+}
+
+p {
+  font-family: "Barlow", sans-serif;
+  color: hsl(231, 77%, 90%);
+  font-size: 18px;
+}
+
+.home-container,
+.dest-container,
+.crew-container,
+.tech-container {
   background-position: center;
   background-size: cover;
   position: absolute;
@@ -30,6 +57,10 @@ body {
   padding: 40px 0 40px 55px;
 }
 
+.header img {
+  z-index: 1;
+}
+
 .header-inner {
   width: 92%;
   display: flex;
@@ -41,9 +72,9 @@ body {
   height: 1px;
   margin-right: -30px;
   margin-left: 0;
-  background-color: hsl(0, 0%, 100%, 0.2);
+  background-color: hsl(0, 0%, 100%, 0.35);
   border: none;
-  z-index: 1;
+  z-index: 2;
 }
 
 .nav-box {
@@ -56,6 +87,7 @@ body {
   background-color: hsl(0, 0%, 100%, 0.05);
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
+  z-index: 1;
 }
 
 nav {
@@ -65,11 +97,7 @@ nav {
   gap: 50px;
 }
 
-nav div {
-  cursor: pointer;
-}
-
-nav div > a {
+nav a {
   font-family: "Barlow Condensed", sans-serif;
   font-weight: 400;
   color: hsl(0, 0%, 100%);
@@ -81,18 +109,429 @@ nav div > a {
   border-top: 3px solid hsl(0, 0%, 100%, 0);
   border-bottom: 3px solid hsl(0, 0%, 100%, 0);
   transition: border-bottom 0.2s;
-  /* pointer-events: none; */
 }
 
-nav div > a:hover {
+nav a:hover {
   border-bottom: 3px solid hsl(0, 0%, 100%, 0.5);
 }
 
-nav div > a.active {
+nav a.active {
+  border-bottom: 3px solid hsl(0, 0%, 100%);
+  /* pointer-events: none; */
+}
+
+nav a > span {
+  font-weight: 700;
+  pointer-events: none;
+} 
+
+.home-container {
+  background-image: url("./images/home/background-home-desktop.jpg");
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-left: 11.5%;
+  padding-right: 11.5%;
+  padding-bottom: 14.5vh;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+}
+
+.home-content h3 {
+  color: hsl(231, 79%, 90%);
+  font-size: 28px;
+  letter-spacing: 4.5px;
+  line-height: 1;
+  margin: 0;
+}
+
+.home-content h1 {
+  font-size: 150px;
+  margin-top: 30px;
+  margin-bottom: 45px;
+  line-height: 1;
+}
+
+.home-content p {
+  line-height: 32px;
+  margin: 0;
+}
+
+.home-btn {
+  width: 274px;
+  height: 274px;
+  border: none;
+  border-radius: 50%;
+  background-color: hsl(0, 0%, 100%);
+  font-family: "Bellefair", sans-serif;
+  font-size: 32px;
+  letter-spacing: 2px;
+  box-shadow: 0 0 0 0px hsl(0, 0%, 100%, 0);
+  transition: box-shadow 0.6s;
+  cursor: pointer;
+}
+
+.home-btn:hover {
+  box-shadow: 0 0 3px 80px hsl(0, 0%, 100%, 0.1);
+}
+
+.dest-container {
+  background-image: url("./images/destination/background-destination-desktop.jpg");
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 64px;
+  padding-left: 11.5%;
+  padding-right: 11.5%;
+  padding-bottom: 13vh;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.dest-title h3,
+.crew-title h3,
+.tech-title h3 {
+  font-size: 28px;
+  letter-spacing: 4.5px;
+  margin-bottom: 0;
+}
+
+.dest-title h3 > span,
+.crew-title h3 > span,
+.tech-title h3 > span {
+  font-weight: 700;
+  color: hsl(0, 0%, 100%, 0.25);
+  margin-right: 28px;
+}
+
+.dest-content-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.dest-img {
+  width: 445px;
+  height: 445px;
+  margin-right: 155px;
+  margin-left: auto;
+}
+
+.dest-img img {
+  animation: rotation 90s linear infinite;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.dest-text {
+  display: flex;
+  flex-direction: column;
+  width: 445px;
+  text-align: start;
+}
+
+.dest-tabs {
+  display: flex;
+  align-items: center;
+  font-family: "Barlow Condensed", sans-serif;
+  list-style: none;
+  letter-spacing: 2.7px;
+  margin: 0;
+  padding: 0;
+}
+
+.dest-tabs li {
+  margin-right: 35px;
+  cursor: pointer;
+}
+
+.dest-tabs li > a {
+  text-decoration: none;
+  color: hsl(231, 77%, 90%);
+  padding-bottom: 12px;
+  border-top: 3px solid hsl(0, 0%, 100%, 0);
+  border-bottom: 3px solid hsl(0, 0%, 100%, 0);
+  transition: border-bottom 0.2s, color 0.2s;
+}
+
+.dest-tabs li > a:hover {
+  border-bottom: 3px solid hsl(0, 0%, 100%, 0.5);
+}
+
+.dest-tabs li > a.active {
+  color: hsl(0, 0%, 100%);
   border-bottom: 3px solid hsl(0, 0%, 100%);
 }
 
-nav div > a > span {
-  font-weight: 700;
-  pointer-events: none;
+.dest-text h1 {
+  font-size: 100px;
+  margin-top: 45px;
+  margin-bottom: 15px;
+}
+
+.dest-text p {
+  line-height: 32px;
+  margin-top: 0;
+  margin-bottom: 54px;
+}
+
+.dest-text hr {
+  width: 100%;
+  height: 1px;
+  margin: 0;
+  background-color: hsl(231, 15%, 26%);
+  border: none;
+  z-index: 1;
+}
+
+.dest-text div {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.dest-distance,
+.dest-travel-time {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.dest-distance {
+  margin-right: 80px;
+}
+
+.dest-distance p,
+.dest-travel-time p {
+  margin-top: 28px;
+  margin-bottom: 12px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 14px;
+  letter-spacing: 2.4px;
+}
+
+.dest-distance h2,
+.dest-travel-time h2 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.crew-container {
+  background-image: url("./images/crew/background-crew-desktop.jpg");
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-left: 11.5%;
+  padding-right: 11.5%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.crew-title h3 {
+  margin-bottom: 154px;
+}
+
+.crew-text-content h2 {
+  font-size: 32px;
+  color: hsl(0, 0%, 100%, 0.5);
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.crew-text-content h1 {
+  font-size: 56px;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.crew-text-content p {
+  line-height: 32px;
+  margin-top: 0;
+  margin-bottom: 120px;
+  width: 445px;
+}
+
+.crew-tabs {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 10.5vh;
+  padding: 0;
+}
+
+.crew-tabs li,
+.crew-tabs li > a > div {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  margin-right: 20px;
+  cursor: pointer;
+  background-color: hsl(0, 0%, 100%, 0.17);
+  transition: background-color 0.1s;
+}
+
+.crew-tabs li > a > div:hover {
+  background-color: hsl(0, 0%, 100%, 0.5);
+}
+
+.crew-tabs li > a.active > div {
+  background-color: hsl(0, 0%, 100%);
+}
+
+.tech-container {
+  background-image: url("./images/technology/background-technology-desktop.jpg");
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 26px;
+  padding-left: 11.5%;
+  padding-right: 3.5%;
+  padding-bottom: 11vh;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.tech-content-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.tech-text-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 80px;
+}
+
+.tech-tabs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  font-family: "Bellefair", sans-serif;
+  list-style: none;
+  font-size: 32px;
+  margin: 0;
+  padding: 0;
+}
+
+.tech-tabs li,
+.tech-tabs li > a > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid hsl(0, 0%, 100%, 0.25);
+  cursor: pointer;
+  background-color: transparent;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.tech-tabs li > a {
+  text-decoration: none;
+  color: hsl(0, 0%, 100%);
+  transition: color 0.2s;
+  width: 100%;
+}
+
+.tech-tabs li > a > div:hover {
+  border-color: hsl(0, 0%, 100%);
+}
+
+.tech-tabs li > a.active > div {
+  color: hsl(230, 35%, 7%);
+  background-color: hsl(0, 0%, 100%);
+}
+
+.tech-text h3 {
+  color: hsl(231, 77%, 90%);
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 12px;
+  letter-spacing: 2.7px;
+}
+
+.tech-text h1 {
+  font-size: 56px;
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+.tech-text p {
+  width: 445px;
+  line-height: 32px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Small devices such as phones (less than 576px) */
+@media (max-width: 575px) {
+}
+
+/* Medium devices such as tablets (less than 992px) */
+@media (max-width: 991px) {
+}
+
+/* Large devices such as laptops (less than 1201px) */
+@media (max-width: 1200px) {
+  .home-container {
+    padding-left: 9%;
+    padding-right: 9%;
+  }
+
+  .home-content {
+    width: 420px;
+  }
+
+  .home-content h3 {
+    font-size: 26px;
+  }
+
+  .home-content h1 {
+    font-size: 120px;
+  }
+
+  .home-btn {
+    width: 250px;
+    height: 250px;
+  }
+
+  .home-btn:hover {
+    box-shadow: 0 0 3px 65px hsl(0, 0%, 100%, 0.1);
+  }
+}
+
+/* Default: Larger laptops and desktops (1201px to 1535px) */
+
+/* Largest laptops and desktops (1536px and up) */
+@media (min-width: 1536px) {
+  /* .home-container {
+    padding-left: 14%;
+    padding-right: 14%;
+  } */
 }
