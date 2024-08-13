@@ -12,27 +12,31 @@ export default function Crew() {
 
   return (
     <div className="crew-container">
-      <div className="crew-text-content">
-        <div className="crew-title">
-          <h3>
-            <span>02</span>MEET YOUR CREW
-          </h3>
+      <div className="crew-inner">
+        <div className="crew-text-content">
+          <div className="crew-text">
+            <div className="crew-title">
+              <h3>
+                <span>02</span>MEET YOUR CREW
+              </h3>
+            </div>
+
+            <h2>{currentRole.toUpperCase()}</h2>
+            <h1>{currentName.toUpperCase()}</h1>
+            <p>{currentBio}</p>
+          </div>
+
+          <Tabs
+            data={data}
+            className={className}
+            currentIndex={currentIndex}
+            setCurrentIndex={setCurrentIndex}
+          />
         </div>
 
-        <h2>{currentRole.toUpperCase()}</h2>
-        <h1>{currentName.toUpperCase()}</h1>
-        <p>{currentBio}</p>
-
-        <Tabs
-          data={data}
-          className={className}
-          currentIndex={currentIndex}
-          setCurrentIndex={setCurrentIndex}
-        />
-      </div>
-
-      <div className="crew-img">
-        <img src={currentImg} alt={currentName} />
+        <div className="crew-img">
+          <img src={currentImg} alt={currentName} />
+        </div>
       </div>
     </div>
   );
