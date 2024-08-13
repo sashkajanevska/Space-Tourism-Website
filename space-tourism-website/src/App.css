@@ -10,6 +10,7 @@ html,
 body {
   margin: 0;
   height: 100%;
+  background-color: hsl(229, 35%, 7%);
 }
 
 h1 {
@@ -99,6 +100,7 @@ nav {
 
 nav a {
   font-family: "Barlow Condensed", sans-serif;
+  font-size: 16px;
   font-weight: 400;
   color: hsl(0, 0%, 100%);
   letter-spacing: 2.7px;
@@ -117,13 +119,13 @@ nav a:hover {
 
 nav a.active {
   border-bottom: 3px solid hsl(0, 0%, 100%);
-  /* pointer-events: none; */
 }
 
 nav a > span {
+  font-size: 16px;
   font-weight: 700;
   pointer-events: none;
-} 
+}
 
 .home-container {
   background-image: url("./images/home/background-home-desktop.jpg");
@@ -184,17 +186,23 @@ nav a > span {
 
 .dest-container {
   background-image: url("./images/destination/background-destination-desktop.jpg");
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
-  gap: 64px;
   padding-left: 11.5%;
   padding-right: 11.5%;
   padding-bottom: 13vh;
+  padding-top: 200px;
   width: 100%;
+  height: 100%;
   position: absolute;
   bottom: 0;
+}
+
+.dest-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .dest-title h3,
@@ -202,7 +210,7 @@ nav a > span {
 .tech-title h3 {
   font-size: 28px;
   letter-spacing: 4.5px;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 .dest-title h3 > span,
@@ -215,16 +223,14 @@ nav a > span {
 
 .dest-content-box {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: flex-end;
   width: 100%;
 }
 
 .dest-img {
-  width: 445px;
-  height: 445px;
-  margin-right: 155px;
-  margin-left: auto;
+  margin-left: 64px;
+  margin-right: auto;
 }
 
 .dest-img img {
@@ -255,6 +261,7 @@ nav a > span {
   letter-spacing: 2.7px;
   margin: 0;
   padding: 0;
+  width: fit-content;
 }
 
 .dest-tabs li {
@@ -334,37 +341,51 @@ nav a > span {
 
 .crew-container {
   background-image: url("./images/crew/background-crew-desktop.jpg");
+  padding-left: 11.5%;
+  padding-right: 11.5%;
+  padding-top: 200px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.crew-inner {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding-left: 11.5%;
-  padding-right: 11.5%;
   width: 100%;
-  position: absolute;
-  bottom: 0;
+  height: 100%;
+}
+
+.crew-text-content {
+  padding-bottom: 94px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .crew-title h3 {
   margin-bottom: 154px;
 }
 
-.crew-text-content h2 {
+.crew-text h2 {
   font-size: 32px;
   color: hsl(0, 0%, 100%, 0.5);
   margin-top: 0;
   margin-bottom: 15px;
 }
 
-.crew-text-content h1 {
+.crew-text h1 {
   font-size: 56px;
   margin-top: 0;
   margin-bottom: 25px;
 }
 
-.crew-text-content p {
+.crew-text p {
   line-height: 32px;
-  margin-top: 0;
-  margin-bottom: 120px;
+  margin: 0;
   width: 445px;
 }
 
@@ -372,9 +393,9 @@ nav a > span {
   display: flex;
   align-items: center;
   list-style: none;
-  margin-top: 0;
-  margin-bottom: 10.5vh;
+  margin: 0;
   padding: 0;
+  width: fit-content;
 }
 
 .crew-tabs li,
@@ -398,17 +419,22 @@ nav a > span {
 
 .tech-container {
   background-image: url("./images/technology/background-technology-desktop.jpg");
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
-  gap: 26px;
   padding-left: 11.5%;
   padding-right: 3.5%;
   padding-bottom: 11vh;
+  padding-top: 200px;
   width: 100%;
+  height: 100%;
   position: absolute;
   bottom: 0;
+}
+
+.tech-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .tech-content-box {
@@ -502,6 +528,7 @@ nav a > span {
   .home-container {
     padding-left: 9%;
     padding-right: 9%;
+    padding-bottom: 16vh;
   }
 
   .home-content {
@@ -509,29 +536,103 @@ nav a > span {
   }
 
   .home-content h3 {
-    font-size: 26px;
+    font-size: 22px;
   }
 
   .home-content h1 {
-    font-size: 120px;
+    font-size: 100px;
+    margin-bottom: 25px;
+  }
+
+  .home-content p {
+    font-size: 16px;
   }
 
   .home-btn {
-    width: 250px;
-    height: 250px;
+    width: 230px;
+    height: 230px;
+    font-size: 26px;
   }
 
   .home-btn:hover {
-    box-shadow: 0 0 3px 65px hsl(0, 0%, 100%, 0.1);
+    box-shadow: 0 0 3px 60px hsl(0, 0%, 100%, 0.1);
+  }
+
+  .dest-container {
+    padding-left: 9%;
+    padding-right: 9%;
+    padding-bottom: 18vh;
+  }
+
+  .dest-title h3,
+  .crew-title h3,
+  .tech-title h3 {
+    font-size: 22px;
+  }
+
+  .dest-img {
+    display: flex;
+    align-items: center;
+    margin-right: 100px;
+    height: 400px;
+  }
+
+  .dest-img,
+  .dest-img img {
+    width: 300px;
+  }
+
+  .dest-tabs li > a {
+    font-size: 14px;
+  }
+
+  .dest-text h1 {
+    font-size: 60px;
+  }
+
+  .dest-text p {
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 35px;
+  }
+
+  .dest-distance p,
+  .dest-travel-time p {
+    /* margin-top: 28px; */
+    margin-bottom: 6px;
+    font-size: 14px;
+    /* letter-spacing: 2.4px; */
+  }
+
+  .dest-distance h2,
+  .dest-travel-time h2 {
+    font-size: 24px;
   }
 }
 
-/* Default: Larger laptops and desktops (1201px to 1535px) */
+/* Default: Laptops and desktops from 1201px to 1535px */
 
-/* Largest laptops and desktops (1536px and up) */
+/* Larger laptops and desktops (1536px and up) */
 @media (min-width: 1536px) {
-  /* .home-container {
-    padding-left: 14%;
-    padding-right: 14%;
-  } */
+  nav a,
+  nav a > span {
+    font-size: 18px;
+  }
+
+  .home-container,
+  .dest-container,
+  .crew-container,
+  .tech-container {
+    padding-left: 15.5%;
+    padding-right: 15.5%;
+  }
+
+  .dest-tabs li > a {
+    font-size: 18px;
+  }
+
+  .dest-distance p,
+  .dest-travel-time p {
+    font-size: 16px;
+  } 
 }
