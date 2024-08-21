@@ -1,5 +1,5 @@
 import "./App.css";
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Link, Outlet, RouterProvider } from "react-router-dom";
 import Header from "./components/Header";
 import HomePage from "./pages/HomePage";
 import DestinationPage from "./pages/DestinationPage";
@@ -91,6 +91,15 @@ function App() {
           ],
         },
       ],
+    },
+    {
+      path: "*",
+      element: (
+        <div className="error-msg">
+          <p>404 not found</p>
+          <Link to={"/"}>Go back</Link>
+        </div>
+      ),
     },
   ]);
 
