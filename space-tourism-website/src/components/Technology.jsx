@@ -8,9 +8,10 @@ export default function Technology() {
   let currentName = obj.name;
   let currentDescr = obj.description;
   let currentImg = obj.images.portrait;
+  let currentImgTablet = obj.images.landscape;
 
   return (
-    <div className="tech-container">
+    <div id="technology" className="tech-container">
       <div className="tech-inner">
         <div className="tech-title">
           <h3>
@@ -34,7 +35,12 @@ export default function Technology() {
           </div>
 
           <div className="tech-img">
-            <img src={currentImg} alt={currentName} />
+            <img id="imgDesktop" src={currentImg} alt={currentName} />
+            <img
+              id="imgTablet"
+              src={currentImgTablet}
+              alt={currentName}
+            />
           </div>
         </div>
       </div>

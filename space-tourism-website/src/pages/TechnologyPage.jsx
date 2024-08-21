@@ -25,6 +25,12 @@ export default function TechnologyPage() {
     };
   }, [currentIndex]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      document.getElementById("technology").classList.add("active");
+    }, 50);
+  }, []);
+
   return (
     <>
       <Outlet context={[data, currentIndex, setCurrentIndex]} />

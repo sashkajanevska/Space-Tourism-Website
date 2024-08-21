@@ -7,8 +7,14 @@ export default function HomePage() {
     navigate("/destination/moon");
   };
 
+  useEffect(() => {
+    setTimeout(() => {
+      document.getElementById("home").classList.add("active");
+    }, 50);
+  }, []);
+
   return (
-    <div className="home-container">
+    <div id="home" className="home-container">
       <div className="home-content">
         <h3>SO, YOU WANT TO TRAVEL TO</h3>
         <h1>SPACE</h1>

@@ -12,7 +12,7 @@ export default function Destination() {
   let currentTravel = destination.travel;
 
   return (
-    <div className="dest-container">
+    <div id="destination" className="dest-container">
       <div className="dest-inner">
         <div className="dest-title">
           <h3>

@@ -24,6 +24,12 @@ export default function DestinationPage() {
     };
   }, [currentIndex]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      document.getElementById("destination").classList.add("active");
+    }, 50);
+  }, []);
+
   return (
     <>
       <Outlet context={[data, currentIndex, setCurrentIndex]} />
