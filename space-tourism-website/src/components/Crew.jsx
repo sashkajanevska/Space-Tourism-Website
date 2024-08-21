@@ -11,7 +11,7 @@ export default function Crew() {
   let currentImg = member.images.png;
 
   return (
-    <div className="crew-container">
+    <div id="crew" className="crew-container">
       <div className="crew-inner">
         <div className="crew-text-content">
           <div className="crew-text">
