@@ -25,6 +25,12 @@ export default function CrewPage() {
     };
   }, [currentIndex]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      document.getElementById("crew").classList.add("active");
+    }, 50);
+  }, []);
+
   return (
     <>
       <Outlet context={[data, currentIndex, setCurrentIndex]} />
