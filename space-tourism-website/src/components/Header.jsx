@@ -1,9 +1,29 @@
 import { NavLink } from "react-router-dom";
 
 export default function Header() {
+  const toggleNav = () => {
+    const toggleButtons = document.querySelectorAll(".nav-button");
+    const navBox = document.querySelector(".header-inner");
+
+    toggleButtons.forEach((button) => button.classList.toggle("active"));
+    navBox.classList.toggle("active");
+  };
+
   return (
     <div className="header">
-      <img src="/src/images/shared/logo.svg" alt="logo" />
+      <img className="logo" src="/src/images/shared/logo.svg" alt="logo" />
+      <img
+        className="nav-button active"
+        src="/src/images/shared/icon-hamburger.svg"
+        alt="open-nav"
+        onClick={toggleNav}
+      />
+      <img
+        className="nav-button close"
+        src="/src/images/shared/icon-close.svg"
+        alt="close-nav"
+        onClick={toggleNav}
+      />
       <div className="header-inner">
         <hr />
         <div className="nav-box">
