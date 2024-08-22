@@ -21,6 +21,18 @@ export default function Crew() {
               </h3>
             </div>
 
+            <div className="crew-img-mobile">
+              <img src={currentImg} alt={currentName} />
+            </div>
+
+            <Tabs
+              id={"-mobile"}
+              data={data}
+              className={className}
+              currentIndex={currentIndex}
+              setCurrentIndex={setCurrentIndex}
+            />
+
             <h2>{currentRole.toUpperCase()}</h2>
             <h1>{currentName.toUpperCase()}</h1>
             <p>{currentBio}</p>
