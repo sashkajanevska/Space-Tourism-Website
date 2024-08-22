@@ -382,6 +382,10 @@ nav a > span {
   margin-bottom: 154px;
 }
 
+.crew-img-mobile {
+  display: none;
+}
+
 .crew-text h2 {
   font-size: 32px;
   color: hsl(0, 0%, 100%, 0.5);
@@ -576,7 +580,7 @@ nav a > span {
   .logo {
     width: 40px;
   }
-  
+
   .nav-button {
     display: block;
     position: absolute;
@@ -596,7 +600,7 @@ nav a > span {
     pointer-events: all;
     transform: scale(1);
   }
-  
+
   .header-inner {
     flex-direction: column;
     align-items: flex-start;
@@ -616,7 +620,7 @@ nav a > span {
     height: 100%;
     z-index: 1;
   }
-  
+
   .header-inner hr {
     display: none;
   }
@@ -630,7 +634,7 @@ nav a > span {
     align-items: flex-start;
     padding: 118px 32px;
     opacity: 0;
-    transition: min-width 0.5s ease-in-out, opacity 0.25s ease;
+    /* transition: min-width  0.5s ease-in-out, opacity 0.25s ease; */
   }
 
   .header-inner.active > .nav-box {
@@ -644,65 +648,315 @@ nav a > span {
     gap: 32px;
     width: fit-content;
     opacity: 0;
-    transition: width 0.5s ease-in-out, opacity 0.25s ease;
+    /* transition: width 0.5s ease-in-out, opacity 0.25s ease; */
   }
 
   .header-inner.active > .nav-box > nav {
     width: 100%;
     opacity: 1;
   }
-  
+
   nav a {
     padding-bottom: 5px;
     padding-top: 5px;
   }
-  
+
   .home-container {
     background-image: url("./images/home/background-home-mobile.jpg");
     flex-direction: column;
-    /* justify-content: space-between; */
     align-items: center;
-    gap: 80px;
-    padding-top: 16.8vh;
-    padding-left: 6.4%;
-    padding-right: 6.4%;
-    padding-bottom: 7.2vh;
+    justify-content: flex-start;
+    gap: 125px;
+    padding: 16.8vh 6.4% 7.2vh;
   }
 
   .home-content {
     align-items: center;
+    justify-content: center;
     text-align: center;
     min-width: 325px;
     width: 100%;
+    height: 50%;
   }
-  
+
   .home-content h3 {
     font-size: 16px;
     letter-spacing: 2.7px;
   }
-  
+
   .home-content h1 {
     font-size: 80px;
     margin-top: 16px;
     margin-bottom: 16px;
     line-height: 100px;
   }
-  
-  .home-content p {
+
+  .home-content p,
+  .dest-text p,
+  .crew-text p,
+  .tech-text p {
     font-size: 15px;
     line-height: 25px;
-    margin: 0;
+    width: 100%;
+    margin-bottom: 50px;
   }
-  
+
+  .home-content p {
+    margin: 0 0 12%;
+  }
+
   .home-btn {
     width: 150px;
     height: 150px;
     font-size: 20px;
     letter-spacing: 1.25px;
   }
-  
+
   .home-btn:hover {
     box-shadow: 0 0 3px 45px hsl(0, 0%, 100%, 0.1);
+  }
+
+  .dest-container {
+    background-image: url("./images/destination/background-destination-mobile.jpg");
+    padding: 10.4vh 6.4% 0;
+  }
+
+  .dest-inner {
+    align-items: center;
+    overflow-y: auto;
+    padding-bottom: 6.8vh;
+    height: fit-content;
+  }
+
+  .dest-title h3,
+  .crew-title h3,
+  .tech-title h3 {
+    font-size: 16px;
+    letter-spacing: 2.7px;
+    margin-bottom: 32px;
+  }
+
+  .dest-title h3 > span,
+  .crew-title h3 > span,
+  .tech-title h3 > span {
+    margin-right: 16px;
+  }
+
+  .dest-content-box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dest-img {
+    width: 45.3%;
+  }
+
+  .dest-img img {
+    width: 100%;
+  }
+
+  .dest-text {
+    text-align: center;
+    width: 100%;
+  }
+
+  .dest-tabs {
+    justify-content: space-between;
+    gap: 26px;
+    margin: 26px auto 0;
+  }
+
+  .dest-tabs li {
+    margin-right: 0px;
+  }
+
+  .dest-tabs li > a {
+    padding-bottom: 8px;
+    letter-spacing: 2.4px;
+    font-size: 14px;
+  }
+
+  .dest-text h1 {
+    font-size: 56px;
+    margin-top: 28px;
+    margin-bottom: 1px;
+  }
+
+  .dest-text p {
+    margin-bottom: 32px;
+  }
+
+  .dest-text div {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dest-distance,
+  .dest-travel-time {
+    align-items: center;
+    margin-top: 32px;
+  }
+
+  .dest-distance {
+    margin-right: 0px;
+  }
+
+  .dest-travel-time {
+    margin-bottom: 50px;
+  }
+
+  .dest-distance p,
+  .dest-travel-time p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .crew-container {
+    background-image: url("./images/crew/background-crew-mobile.jpg");
+    padding: 10.4vh 6.4% 0;
+  }
+
+  .crew-inner {
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .crew-text-content {
+    justify-content: flex-start;
+    padding-bottom: 0px;
+  }
+
+  .crew-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+  }
+
+  .crew-img-mobile {
+    display: block;
+    width: 100%;
+    height: 224px;
+    border-bottom: 1px solid hsl(231, 15%, 26%);
+  }
+
+  .crew-img-mobile img {
+    height: 100%;
+  }
+
+  .crew-tabs-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: fit-content;
+    margin: 32px auto;
+  }
+
+  .crew-tabs-mobile li,
+  .crew-tabs-mobile li > a > div {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: hsl(0, 0%, 100%, 0.17);
+    transition: background-color 0.1s;
+  }
+
+  .crew-tabs-mobile li > a > div:hover {
+    background-color: hsl(0, 0%, 100%, 0.5);
+  }
+
+  .crew-tabs-mobile li > a.active > div {
+    background-color: hsl(0, 0%, 100%);
+  }
+
+  .crew-text h2 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .crew-text h1,
+  .tech-text h1 {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .crew-tabs,
+  .crew-img {
+    display: none;
+  }
+
+  .tech-container {
+    background-image: url("./images/technology/background-technology-mobile.jpg");
+    padding: 10.4vh 0 0;
+  }
+
+  .tech-inner {
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .tech-content-box {
+    flex-direction: column;
+  }
+
+  .tech-text-content {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0px;
+    margin-bottom: 0%;
+    margin-right: 0%;
+    order: 1;
+  }
+
+  .tech-tabs {
+    flex-direction: row;
+    gap: 16px;
+    font-size: 16px;
+    margin: 34px auto 26px;
+  }
+
+  .tech-tabs li,
+  .tech-tabs li > a > div {
+    width: 40px;
+    height: 40px;
+  }
+
+  .tech-text {
+    width: 100%;
+    padding-left: 6.4%;
+    padding-right: 6.4%;
+    text-align: center;
+  }
+
+  .tech-text h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    letter-spacing: 2.4px;
+  }
+
+  .tech-text h1 {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .tech-text p {
+    min-width: 280px;
+  }
+
+  .tech-img #imgDesktop{
+    display: none;
+  }
+
+  .tech-img #imgTablet {
+    display: block;
+    width: 100%;
   }
 }
 
@@ -868,29 +1122,29 @@ nav a > span {
     padding-right: 5%;
     padding-top: 136px;
   }
-  
+
   .crew-inner {
     flex-direction: column;
     gap: 40px;
   }
-  
+
   .crew-text-content {
     padding-bottom: 0;
     height: fit-content;
     text-align: center;
     width: 100%;
   }
-  
+
   .crew-text h2 {
     font-size: 24px;
     margin-bottom: 8px;
   }
-  
+
   .crew-text h1 {
     font-size: 40px;
     margin-bottom: 16px;
   }
-  
+
   .crew-text p {
     max-width: 590px;
     width: fit-content;
@@ -902,14 +1156,14 @@ nav a > span {
     justify-content: center;
     width: 100%;
   }
-  
+
   .crew-tabs li,
   .crew-tabs li > a > div {
     width: 10px;
     height: 10px;
     margin-right: 16px;
   }
-  
+
   .crew-img {
     min-height: 532px;
     max-height: 600px;
@@ -918,7 +1172,7 @@ nav a > span {
     margin-right: auto;
     overflow-y: hidden;
   }
-  
+
   .crew-img img {
     height: 100%;
   }
@@ -930,7 +1184,7 @@ nav a > span {
     padding-bottom: 9.5vh;
     padding-top: 136px;
   }
-  
+
   .tech-inner {
     justify-content: flex-start;
     height: fit-content;
@@ -943,14 +1197,14 @@ nav a > span {
   .tech-title h3 {
     margin-left: 5%;
   }
-  
+
   .tech-content-box {
     flex-direction: column;
     justify-content: space-between;
     gap: 56px;
     text-align: center;
   }
-  
+
   .tech-text-content {
     order: 1;
     flex-direction: column;
@@ -979,7 +1233,7 @@ nav a > span {
     width: fit-content;
     font-size: 24px;
   }
-  
+
   .tech-tabs li,
   .tech-tabs li > a > div {
     width: 60px;
@@ -989,16 +1243,16 @@ nav a > span {
   .tech-text {
     width: 458px;
   }
-  
+
   .tech-text h3 {
     margin-top: 44px;
     margin-bottom: 16px;
   }
-  
+
   .tech-text h1 {
     font-size: 40px;
     margin-bottom: 16px;
-  }  
+  }
 }
 
 /* (from 992px to 1200px) */

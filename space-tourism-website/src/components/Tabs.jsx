@@ -1,6 +1,6 @@
-const Tabs = ({ data, className, currentIndex, setCurrentIndex }) => {
+const Tabs = ({ data, className, currentIndex, setCurrentIndex, id }) => {
   return (
-    <ul className={className + "-tabs"}>
+    <ul className={id ? className + "-tabs" + id : className + "-tabs"}>
       {data.map((obj, index) => (
         <li key={index}>
           <a

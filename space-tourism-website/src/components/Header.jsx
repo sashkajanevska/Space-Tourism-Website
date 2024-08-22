@@ -28,16 +28,16 @@ export default function Header() {
         <hr />
         <div className="nav-box">
           <nav>
-            <NavLink to={"/"}>
+            <NavLink to={"/"} onClick={toggleNav}> 
               <span>00</span> HOME
             </NavLink>
-            <NavLink to={"destination"}>
+            <NavLink to={"destination"} onClick={toggleNav}>
               <span>01</span> DESTINATION
             </NavLink>
-            <NavLink to={"crew"}>
+            <NavLink to={"crew"} onClick={toggleNav}>
               <span>02</span> CREW
             </NavLink>
-            <NavLink to={"technology"}>
+            <NavLink to={"technology"} onClick={toggleNav}>
               <span>03</span> TECHNOLOGY
             </NavLink>
           </nav>
