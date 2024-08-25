@@ -21,9 +21,27 @@ export default function Crew() {
               </h3>
             </div>
 
+<<<<<<< Updated upstream
             <h2>{currentRole.toUpperCase()}</h2>
             <h1>{currentName.toUpperCase()}</h1>
             <p>{currentBio}</p>
+=======
+            <div className="crew-img-mobile crew">
+              <img src={currentImg} alt={currentName} />
+            </div>
+
+            <Tabs
+              id={"-mobile"}
+              data={data}
+              className={className}
+              currentIndex={currentIndex}
+              setCurrentIndex={setCurrentIndex}
+            />
+
+            <h2 className="crew">{currentRole.toUpperCase()}</h2>
+            <h1 className="crew">{currentName.toUpperCase()}</h1>
+            <p className="crew">{currentBio}</p>
+>>>>>>> Stashed changes
           </div>
 
           <Tabs
@@ -34,7 +52,7 @@ export default function Crew() {
           />
         </div>
 
-        <div className="crew-img">
+        <div className="crew-img crew">
           <img src={currentImg} alt={currentName} />
         </div>
       </div>
