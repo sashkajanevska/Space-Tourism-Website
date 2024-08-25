@@ -37,30 +37,10 @@ p {
   font-size: 18px;
 }
 
-/* Default: Laptops and desktops from 1440px to 1599px */
 
-.home-container,
-.dest-container,
-.crew-container,
-.tech-container {
-  background-position: center;
-  background-size: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  opacity: 0.5;
-  transition: opacity 0.25s;
-}
+/*** DEFAULT: LAPTOPS AND DESKTOPS FROM 1440PX TO 1599PX ***/
 
-.home-container.active,
-.dest-container.active,
-.crew-container.active,
-.tech-container.active {
-  opacity: 1;
-}
-
+/* HEADER START */
 .header {
   display: flex;
   justify-content: space-between;
@@ -113,6 +93,13 @@ nav {
   gap: 50px;
 }
 
+nav div {
+  padding-bottom: 37px;
+  padding-top: 37px;
+  pointer-events: all;
+  cursor: pointer;
+}
+
 nav a {
   font-family: "Barlow Condensed", sans-serif;
   font-size: 16px;
@@ -134,11 +121,41 @@ nav a:hover {
 
 nav a.active {
   border-bottom: 3px solid hsl(0, 0%, 100%);
+  pointer-events: none;
 }
 
 nav a > span {
   font-size: 16px;
   font-weight: 700;
+}
+/* HEADER END */
+
+
+/* HOME PAGE START */
+.home-container,
+.dest-container,
+.crew-container,
+.tech-container {
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  opacity: 0.5;
+  transition: opacity 0.25s;
+}
+
+.home-container.active,
+.dest-container.active,
+.crew-container.active,
+.tech-container.active {
+  opacity: 1;
+}
+
+.inactive {
+  opacity: 0;
 }
 
 .home-container {
@@ -197,7 +214,10 @@ nav a > span {
 .home-btn:hover {
   box-shadow: 0 0 3px 80px hsl(0, 0%, 100%, 0.1);
 }
+/* HOME PAGE END */
 
+
+/* DESTINATION PAGE START */
 .dest-container {
   background-image: url("./images/destination/background-destination-desktop.jpg");
   padding-left: 11.5%;
@@ -245,6 +265,7 @@ nav a > span {
 .dest-img {
   margin-left: auto;
   margin-right: auto;
+  transition: opacity 0.75s;
 }
 
 .dest-img img {
@@ -304,12 +325,14 @@ nav a > span {
   font-size: 100px;
   margin-top: 45px;
   margin-bottom: 15px;
+  transition: opacity 0.75s;
 }
 
 .dest-text p {
   line-height: 32px;
   margin-top: 0;
   margin-bottom: 54px;
+  transition: opacity 0.75s;
 }
 
 .dest-text hr {
@@ -323,6 +346,7 @@ nav a > span {
 
 .dest-text div {
   display: flex;
+  transition: opacity 0.75s;
 }
 
 .dest-distance,
@@ -350,7 +374,10 @@ nav a > span {
   margin: 0;
   font-size: 28px;
 }
+/* DESTINATION PAGE END */
 
+
+/* CREW PAGE START */
 .crew-container {
   background-image: url("./images/crew/background-crew-desktop.jpg");
   padding-left: 11.5%;
@@ -382,7 +409,8 @@ nav a > span {
   margin-bottom: 154px;
 }
 
-.crew-img-mobile {
+.crew-img-mobile,
+.crew-tabs-mobile {
   display: none;
 }
 
@@ -391,18 +419,21 @@ nav a > span {
   color: hsl(0, 0%, 100%, 0.5);
   margin-top: 0;
   margin-bottom: 15px;
+  transition: opacity 0.75s;
 }
 
 .crew-text h1 {
   font-size: 56px;
   margin-top: 0;
   margin-bottom: 25px;
+  transition: opacity 0.75s;
 }
 
 .crew-text p {
   line-height: 32px;
   margin: 0;
   width: 445px;
+  transition: opacity 0.75s;
 }
 
 .crew-tabs {
@@ -435,12 +466,16 @@ nav a > span {
 
 .crew-img {
   max-width: 550px;
+  transition: opacity 0.75s;
 }
 
 .crew-img img {
   width: 100%;
 }
+/* CREW PAGE END */
 
+
+/* TECHNOLOGY PAGE START */
 .tech-container {
   background-image: url("./images/technology/background-technology-desktop.jpg");
   padding-left: 11.5%;
@@ -536,6 +571,7 @@ nav a > span {
   font-size: 56px;
   margin-top: 0;
   margin-bottom: 18px;
+  transition: opacity 0.75s;
 }
 
 .tech-text p {
@@ -543,12 +579,21 @@ nav a > span {
   line-height: 32px;
   margin-top: 0;
   margin-bottom: 0;
+  transition: opacity 0.75s;
+}
+
+.tech-img {
+  transition: opacity 0.75s;
 }
 
 .tech-img #imgTablet {
   display: none;
+  transition: opacity 0.75s;
 }
+/* TECHNOLOGY PAGE START */
 
+
+/* PAGE NOT FOUND */
 .error-msg {
   padding: 50px 25px;
 }
@@ -568,17 +613,22 @@ nav a > span {
   color: hsl(231, 77%, 90%);
 }
 
-/* Small devices */
-/* (less than 576px) */
 
+/*** SMALL DEVICES ***/
+
+/* (LESS THAN 576PX) */
 @media (max-width: 575px) {
   .header {
+    justify-content: flex-end;
     align-items: flex-start;
-    padding: 24px;
+    padding: 0;
   }
 
   .logo {
     width: 40px;
+    position: absolute;
+    top: 24px;
+    left: 24px;
   }
 
   .nav-button {
@@ -589,7 +639,7 @@ nav a > span {
     pointer-events: none;
     transform: scale(0);
     transition: transform 0.25s;
-    z-index: 2;
+    z-index: 3;
   }
 
   .nav-button.close {
@@ -603,62 +653,61 @@ nav a > span {
 
   .header-inner {
     flex-direction: column;
-    align-items: flex-start;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    max-width: 0%;
-    opacity: 0;
-    transition: max-width 0.5s ease-in-out, opacity 0.25s ease;
-  }
-
-  .header-inner.active {
-    max-width: 67.7%;
-    opacity: 1;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+    align-items: flex-end;
   }
 
   .header-inner hr {
     display: none;
   }
 
-  .header-inner > .nav-box {
-    min-width: fit-content;
-    width: 100%;
+  .nav-box {
+    min-width: 0;
+    width: 0;
     height: 100%;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
     padding: 118px 32px;
     opacity: 0;
-    /* transition: min-width  0.5s ease-in-out, opacity 0.25s ease; */
+    transition: width 0.5s ease-in-out, opacity 0.5s ease-in-out;
   }
 
-  .header-inner.active > .nav-box {
-    min-width: 254px;
+  .nav-box.active {
+    width: 67.7%;
     opacity: 1;
+    z-index: 2;
   }
 
-  .header-inner > .nav-box > nav {
+  .nav-box nav {
     flex-direction: column;
     align-items: flex-start;
     gap: 32px;
-    width: fit-content;
+    width: 100%;
     opacity: 0;
-    /* transition: width 0.5s ease-in-out, opacity 0.25s ease; */
+    transition: opacity 1s ease-in-out;
   }
 
-  .header-inner.active > .nav-box > nav {
-    width: 100%;
+  .nav-box.active nav {
     opacity: 1;
   }
 
+  nav div,
   nav a {
     padding-bottom: 5px;
     padding-top: 5px;
+  }
+
+  nav a.hidden {
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  nav a.visible {
+    opacity: 1;
   }
 
   .home-container {
@@ -666,17 +715,15 @@ nav a > span {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    gap: 125px;
-    padding: 16.8vh 6.4% 7.2vh;
+    padding: 16.8vh 6.4% 0;
   }
 
   .home-content {
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     text-align: center;
     min-width: 325px;
     width: 100%;
-    height: 50%;
   }
 
   .home-content h3 {
@@ -702,7 +749,7 @@ nav a > span {
   }
 
   .home-content p {
-    margin: 0 0 12%;
+    margin: 0;
   }
 
   .home-btn {
@@ -710,6 +757,8 @@ nav a > span {
     height: 150px;
     font-size: 20px;
     letter-spacing: 1.25px;
+    margin-top: auto;
+    margin-bottom: 20%;
   }
 
   .home-btn:hover {
@@ -839,6 +888,7 @@ nav a > span {
     width: 100%;
     height: 224px;
     border-bottom: 1px solid hsl(231, 15%, 26%);
+    transition: opacity 0.75s;
   }
 
   .crew-img-mobile img {
@@ -950,7 +1000,7 @@ nav a > span {
     min-width: 280px;
   }
 
-  .tech-img #imgDesktop{
+  .tech-img #imgDesktop {
     display: none;
   }
 
@@ -960,9 +1010,10 @@ nav a > span {
   }
 }
 
-/* Medium devices */
-/* (from 576px to 992px) */
 
+/*** MEDIUM DEVICES ***/
+
+/* (FROM 576PX TO 992PX) */
 @media (min-width: 576px) and (max-width: 991px) {
   .header {
     padding: 0 0 20px 40px;
@@ -983,6 +1034,11 @@ nav a > span {
 
   nav {
     gap: 38px;
+  }
+
+  nav div {
+    padding-bottom: 38px;
+    padding-top: 38px;
   }
 
   nav a {
@@ -1214,19 +1270,6 @@ nav a > span {
     margin: 0;
   }
 
-  .tech-img {
-    width: 100%;
-  }
-
-  .tech-img #imgDesktop {
-    display: none;
-  }
-
-  .tech-img #imgTablet {
-    display: block;
-    width: 100%;
-  }
-
   .tech-tabs {
     flex-direction: row;
     gap: 16px;
@@ -1253,10 +1296,23 @@ nav a > span {
     font-size: 40px;
     margin-bottom: 16px;
   }
+
+  .tech-img {
+    width: 100%;
+  }
+
+  .tech-img #imgDesktop {
+    display: none;
+  }
+
+  .tech-img #imgTablet {
+    display: block;
+    width: 100%;
+  }
 }
 
-/* (from 992px to 1200px) */
 
+/* (FROM 992PX TO 1200PX) */
 @media (min-width: 992px) and (max-width: 1199px) {
   nav a,
   nav a > span {
@@ -1447,9 +1503,10 @@ nav a > span {
   }
 }
 
-/* Large devices */
-/* (from 1200px to 1440px) */
 
+/*** LARGE DEVICES ***/
+
+/* (FROM 1200PX TO 1440PX) */
 @media (min-width: 1200px) and (max-width: 1439px) {
   .home-content {
     width: 420px;
@@ -1600,10 +1657,8 @@ nav a > span {
   }
 }
 
-/* Default: Laptops and desktops from 1440px to 1599px */
 
-/* (1600px and up) */
-
+/* (1600PX AND UP) */
 @media (min-width: 1600px) {
   nav a,
   nav a > span {
