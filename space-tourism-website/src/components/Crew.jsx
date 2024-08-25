@@ -20,8 +20,8 @@ export default function Crew() {
                 <span>02</span>MEET YOUR CREW
               </h3>
             </div>
-
-            <div className="crew-img-mobile">
+            
+            <div className="crew-img-mobile crew">
               <img src={currentImg} alt={currentName} />
             </div>
 
@@ -33,9 +33,9 @@ export default function Crew() {
               setCurrentIndex={setCurrentIndex}
             />
 
-            <h2>{currentRole.toUpperCase()}</h2>
-            <h1>{currentName.toUpperCase()}</h1>
-            <p>{currentBio}</p>
+            <h2 className="crew">{currentRole.toUpperCase()}</h2>
+            <h1 className="crew">{currentName.toUpperCase()}</h1>
+            <p className="crew">{currentBio}</p>
           </div>
 
           <Tabs
@@ -46,7 +46,7 @@ export default function Crew() {
           />
         </div>
 
-        <div className="crew-img">
+        <div className="crew-img crew">
           <img src={currentImg} alt={currentName} />
         </div>
       </div>
