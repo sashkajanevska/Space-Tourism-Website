@@ -20,12 +20,7 @@ export default function Crew() {
                 <span>02</span>MEET YOUR CREW
               </h3>
             </div>
-
-<<<<<<< Updated upstream
-            <h2>{currentRole.toUpperCase()}</h2>
-            <h1>{currentName.toUpperCase()}</h1>
-            <p>{currentBio}</p>
-=======
+            
             <div className="crew-img-mobile crew">
               <img src={currentImg} alt={currentName} />
             </div>
@@ -41,7 +36,6 @@ export default function Crew() {
             <h2 className="crew">{currentRole.toUpperCase()}</h2>
             <h1 className="crew">{currentName.toUpperCase()}</h1>
             <p className="crew">{currentBio}</p>
->>>>>>> Stashed changes
           </div>
 
           <Tabs
