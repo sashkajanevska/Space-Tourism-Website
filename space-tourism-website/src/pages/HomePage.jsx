@@ -1,6 +1,15 @@
+<<<<<<< Updated upstream
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
+=======
+<<<<<<< Updated upstream
+=======
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 export default function HomePage() {
   const navigate = useNavigate();
 
