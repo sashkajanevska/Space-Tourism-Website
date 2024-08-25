@@ -21,7 +21,7 @@ export default function Destination() {
         </div>
 
         <div className="dest-content-box">
-          <div className="dest-img">
+          <div className="dest-img dest">
             <img src={currentImg} alt={currentName} />
           </div>
           <div className="dest-text">
@@ -31,10 +31,10 @@ export default function Destination() {
               currentIndex={currentIndex}
               setCurrentIndex={setCurrentIndex}
             />
-            <h1>{currentName.toUpperCase()}</h1>
-            <p>{currentDescr}</p>
+            <h1 className="dest">{currentName.toUpperCase()}</h1>
+            <p className="dest">{currentDescr}</p>
             <hr />
-            <div>
+            <div className="dest">
               <div className="dest-distance">
                 <p>AVG. DISTANCE</p>
                 <h2>{currentDist.toUpperCase()}</h2>
