@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -12,6 +13,7 @@ export default function HomePage() {
       document.getElementById("home").classList.add("active");
     }, 50);
   }, []);
+  
 
   return (
     <div id="home" className="home-container">
