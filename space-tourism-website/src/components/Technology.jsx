@@ -29,18 +29,14 @@ export default function Technology() {
 
             <div className="tech-text">
               <h3>THE TERMINOLOGY...</h3>
-              <h1>{currentName.toUpperCase()}</h1>
-              <p>{currentDescr}</p>
+              <h1 className="tech">{currentName.toUpperCase()}</h1>
+              <p className="tech">{currentDescr}</p>
             </div>
           </div>
 
-          <div className="tech-img">
+          <div className="tech-img tech">
             <img id="imgDesktop" src={currentImg} alt={currentName} />
-            <img
-              id="imgTablet"
-              src={currentImgTablet}
-              alt={currentName}
-            />
+            <img id="imgTablet" src={currentImgTablet} alt={currentName} />
           </div>
         </div>
       </div>
