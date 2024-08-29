@@ -14,7 +14,7 @@ export default function Header() {
 
   return (
     <div className="header">
-      <svg
+      {/* <svg
         xmlns="http://www.w3.org/2000/svg"
         width="48"
         height="48"
@@ -27,8 +27,8 @@ export default function Header() {
             d="M24 0c0 16-8 24-24 24 15.718.114 23.718 8.114 24 24 0-16 8-24 24-24-16 0-24-8-24-24z"
           />
         </g>
-      </svg>
-      <img className="logo" src="./images/shared/logo.svg" alt="logo" />
+      </svg> */}
+      <img className="logo" src="/logo.svg" alt="logo" />
       <img
         className="nav-button active"
         src="/src/images/shared/icon-hamburger.svg"
