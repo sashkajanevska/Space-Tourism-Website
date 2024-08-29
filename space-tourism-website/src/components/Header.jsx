@@ -14,7 +14,7 @@ export default function Header() {
 
   return (
     <div className="header">
-      <img className="logo" src="/src/images/shared/logo.svg" alt="logo" />
+      <img className="logo" src="../images/shared/logo.svg" alt="logo" />
       <img
         className="nav-button active"
         src="/src/images/shared/icon-hamburger.svg"
