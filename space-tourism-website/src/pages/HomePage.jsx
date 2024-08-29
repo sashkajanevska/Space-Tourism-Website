@@ -4,7 +4,7 @@ import { useEffect } from "react";
 export default function HomePage() {
   const navigate = useNavigate();
   const navigateTo = () => {
-    navigate("/destination/moon");
+    navigate("/destination");
   };
 
   useEffect(() => {

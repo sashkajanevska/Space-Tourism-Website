@@ -1,24 +1,10 @@
 import { useEffect, useState } from "react";
-import { useNavigate, Outlet } from "react-router-dom";
+import Destination from "../components/Destination";
 import initialData from "../data/data.json";
 
 export default function DestinationPage() {
   const [data, setData] = useState(initialData.destinations);
-  const savedIndex = JSON.parse(localStorage.getItem("destPageIndex"));
-  const initialIndex = savedIndex !== null ? savedIndex : 0;
-  const [currentIndex, setCurrentIndex] = useState(initialIndex);
-  const navigateTo = useNavigate();
-
-  useEffect(() => {
-    localStorage.setItem("destPageIndex", currentIndex);
-
-    let destName = data[currentIndex].name.toLowerCase();
-    navigateTo("/destination/" + destName);
-
-    return () => {
-      localStorage.setItem("destPageIndex", JSON.stringify(null));
-    };
-  }, [currentIndex]);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     setTimeout(() => {
@@ -26,10 +12,13 @@ export default function DestinationPage() {
     }, 50);
   }, []);
 
-
   return (
     <>
-      <Outlet context={[data, currentIndex, setCurrentIndex]} />
+      <Destination
+        data={data}
+        currentIndex={currentIndex}
+        setCurrentIndex={setCurrentIndex}
+      />
     </>
   );
 }

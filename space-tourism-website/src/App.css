@@ -93,13 +93,6 @@ nav {
   gap: 50px;
 }
 
-nav div {
-  padding-bottom: 37px;
-  padding-top: 37px;
-  pointer-events: all;
-  cursor: pointer;
-}
-
 nav a {
   font-family: "Barlow Condensed", sans-serif;
   font-size: 16px;
@@ -121,7 +114,6 @@ nav a:hover {
 
 nav a.active {
   border-bottom: 3px solid hsl(0, 0%, 100%);
-  pointer-events: none;
 }
 
 nav a > span {
@@ -598,18 +590,27 @@ nav a > span {
   padding: 50px 25px;
 }
 
+.error-msg span,
 .error-msg p {
   font-family: "Barlow Condensed", sans-serif;
   font-size: 24px;
   font-style: italic;
-  margin-top: 0;
-  margin-bottom: 10px;
+  margin: 0 0 20px;
   color: hsl(0, 0%, 100%);
+}
+
+.error-msg span {
+  font-size: 34px;
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 2px;
+  line-height: 1;
 }
 
 .error-msg a {
   font-family: "Barlow Condensed", sans-serif;
-  font-size: 18px;
+  font-size: 20px;
+  letter-spacing: 1px;
   color: hsl(231, 77%, 90%);
 }
 
@@ -695,7 +696,6 @@ nav a > span {
     opacity: 1;
   }
 
-  nav div,
   nav a {
     padding-bottom: 5px;
     padding-top: 5px;
@@ -1034,11 +1034,6 @@ nav a > span {
 
   nav {
     gap: 38px;
-  }
-
-  nav div {
-    padding-bottom: 38px;
-    padding-top: 38px;
   }
 
   nav a {

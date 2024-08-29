@@ -1,8 +1,6 @@
-import { useOutletContext } from "react-router-dom";
 import Tabs from "./Tabs";
 
-export default function Crew() {
-  const [data, currentIndex, setCurrentIndex] = useOutletContext();
+export default function Crew({ data, currentIndex, setCurrentIndex }) {
   const className = "crew";
   let member = data[currentIndex];
   let currentRole = member.role;

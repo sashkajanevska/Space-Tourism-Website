@@ -1,8 +1,6 @@
-import { useOutletContext } from "react-router-dom";
 import Tabs from "./Tabs";
 
-export default function Technology() {
-  const [data, currentIndex, setCurrentIndex] = useOutletContext();
+export default function Technology({ data, currentIndex, setCurrentIndex }) {
   const className = "tech";
   let obj = data[currentIndex];
   let currentName = obj.name;

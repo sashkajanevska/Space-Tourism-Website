@@ -14,7 +14,7 @@ export default function Header() {
 
   return (
     <div className="header">
-      <img className="logo" src="/logo.svg" alt="logo" />
+      <img className="logo" src="/images/shared/logo.svg" alt="logo" />
       <img
         className="nav-button active"
         src="/images/shared/icon-hamburger.svg"
@@ -35,25 +35,15 @@ export default function Header() {
             <NavLink className="hidden" to={"/"} onClick={toggleNav}>
               <span>00</span> HOME
             </NavLink>
-            <div>
-              <NavLink
-                className="hidden"
-                to={"destination"}
-                onClick={toggleNav}
-              >
-                <span>01</span> DESTINATION
-              </NavLink>
-            </div>
-            <div>
-              <NavLink className="hidden" to={"crew"} onClick={toggleNav}>
-                <span>02</span> CREW
-              </NavLink>
-            </div>
-            <div>
-              <NavLink className="hidden" to={"technology"} onClick={toggleNav}>
-                <span>03</span> TECHNOLOGY
-              </NavLink>
-            </div>
+            <NavLink className="hidden" to={"destination"} onClick={toggleNav}>
+              <span>01</span> DESTINATION
+            </NavLink>
+            <NavLink className="hidden" to={"crew"} onClick={toggleNav}>
+              <span>02</span> CREW
+            </NavLink>
+            <NavLink className="hidden" to={"technology"} onClick={toggleNav}>
+              <span>03</span> TECHNOLOGY
+            </NavLink>
           </nav>
         </div>
       </div>

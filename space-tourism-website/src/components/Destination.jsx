@@ -1,8 +1,6 @@
-import { useOutletContext } from "react-router-dom";
 import Tabs from "./Tabs";
 
-export default function Destination() {
-  const [data, currentIndex, setCurrentIndex] = useOutletContext();
+export default function Destination({ data, currentIndex, setCurrentIndex }) {
   const className = "dest";
   let destination = data[currentIndex];
   let currentImg = destination.images.png;
