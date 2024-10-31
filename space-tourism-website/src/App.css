@@ -663,7 +663,6 @@ nav a > span {
   color: hsl(231, 77%, 90%);
 }
 
-
 /*** SMALL DEVICES ***/
 /*
 /* (LESS THAN 576PX) */
@@ -745,18 +744,28 @@ nav a > span {
     opacity: 1;
   }
 
-  nav a {
+  .nav-box nav a {
     padding-bottom: 5px;
     padding-top: 5px;
+    pointer-events: none;
   }
 
-  nav a.hidden {
+  .nav-box.active nav > a {
+    pointer-events: all;
+  }
+
+  .nav-box span,
+  .nav-box.active span {
+    pointer-events: none;
+  }
+
+  .nav-box nav > a.hidden {
     pointer-events: none;
     opacity: 0;
-    transition: pointer-events 0.1s, opacity 0.25s ease;
+    transition: opacity 0.25s ease;
   }
 
-  nav a.visible {
+  .nav-box nav > a.visible {
     pointer-events: all;
     opacity: 1;
   }
