@@ -1,6 +1,6 @@
 # Space Tourism Website
 
-This project was built using Frontend Mentor coding challenge assets, including Figma design files, optimized image assets, and a local _data.json_ file containing data for all pages. The [challenge](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3) was to build a multi-page space tourism website and match the original design as closely as possible.
+This project was built using Frontend Mentor coding challenge assets, including Figma design files, optimized image assets, and a local <u>data.json<u> file containing data for all pages. The [challenge](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3) was to build a multi-page space tourism website and match the original design as closely as possible.
 
 ![Desktop Preview](./space-tourism-website/public/desktop-preview.png)
 
