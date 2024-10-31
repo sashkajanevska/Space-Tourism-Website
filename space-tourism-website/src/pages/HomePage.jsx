@@ -16,7 +16,7 @@ export default function HomePage() {
   }, []);
 
   useEffect(() => {
-    AOS.init({ duration: 1250 });
+    AOS.init({ duration: 1000 });
   }, []);
 
   return (
@@ -24,19 +24,14 @@ export default function HomePage() {
       <div className="home-content">
         <h3 data-aos="fade-right">SO, YOU WANT TO TRAVEL TO</h3>
         <h1 data-aos="fade-right">SPACE</h1>
-        <p data-aos="fade-up" data-aos-delay="300">
+        <p data-aos="fade-up" data-aos-delay="500">
           Let's face it; if you want to go to space, you might as well genuinely
           go to outer space and not hover kind of on the edge of it. Well sit
           back, and relax because we'll give you a truly out of this world
           experience!!
         </p>
       </div>
-      <button
-        className="home-btn"
-        onClick={navigateTo}
-        data-aos="fade-zoom-in"
-        data-aos-delay="750"
-      >
+      <button className="home-btn" onClick={navigateTo}>
         EXPLORE
       </button>
     </div>
