@@ -1,15 +1,25 @@
+import { useEffect, useRef } from "react";
+
 const Tabs = ({ data, className, currentIndex, setCurrentIndex, id }) => {
-  
-  const toggleClass = () => {
+  const prevIndex = useRef(null);
+
+  const handleTabChange = (index) => {
     document
-      .querySelectorAll("." + className)
-      .forEach((element) => element.classList.add("inactive"));
+      .querySelectorAll(`.${className}`)
+      .forEach((element) => element.classList.remove("fade"));
+
+    setCurrentIndex(index);
+    prevIndex.current = index;
     setTimeout(() => {
       document
-        .querySelectorAll("." + className)
-        .forEach((element) => element.classList.remove("inactive"));
-    }, 250);
+        .querySelectorAll(`.${className}`)
+        .forEach((element) => element.classList.add("fade"));
+    }, 50);
   };
+
+  useEffect(() => {
+    prevIndex.current = currentIndex;
+  }, []);
 
   return (
     <ul className={id ? className + "-tabs" + id : className + "-tabs"}>
@@ -19,10 +29,9 @@ const Tabs = ({ data, className, currentIndex, setCurrentIndex, id }) => {
             className={index === currentIndex ? "active" : ""}
             onClick={(e) => {
               e.preventDefault();
-              toggleClass();
-              setTimeout(() => {
-                setCurrentIndex(index);
-              }, 250);
+              if (prevIndex.current !== index) {
+                handleTabChange(index);
+              }
             }}
           >
             {(className === "dest" && obj.name.toUpperCase()) ||

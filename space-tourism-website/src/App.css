@@ -37,9 +37,26 @@ p {
   font-size: 18px;
 }
 
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 /*** DEFAULT: LAPTOPS AND DESKTOPS FROM 1440PX TO 1599PX ***/
-
+/*
 /* HEADER START */
 .header {
   display: flex;
@@ -49,8 +66,9 @@ p {
   padding: 40px 0 40px 55px;
 }
 
-.logo {
-  z-index: 1;
+.logo-link {
+  display: block;
+  z-index: 2;
 }
 
 .nav-button {
@@ -121,8 +139,8 @@ nav a > span {
   font-weight: 700;
 }
 /* HEADER END */
-
-
+/*
+/*
 /* HOME PAGE START */
 .home-container,
 .dest-container,
@@ -207,8 +225,8 @@ nav a > span {
   box-shadow: 0 0 3px 80px hsl(0, 0%, 100%, 0.1);
 }
 /* HOME PAGE END */
-
-
+/*
+/*
 /* DESTINATION PAGE START */
 .dest-container {
   background-image: url("./images/destination/background-destination-desktop.jpg");
@@ -254,23 +272,20 @@ nav a > span {
   width: 100%;
 }
 
-.dest-img {
+.dest-img.dest {
   margin-left: auto;
   margin-right: auto;
-  transition: opacity 0.75s;
+  visibility: hidden;
 }
 
-.dest-img img {
+.dest-img.dest.fade {
+  visibility: visible;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+}
+
+.dest-img.dest img {
   animation: rotation 90s linear infinite;
-}
-
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 .dest-text {
@@ -313,18 +328,25 @@ nav a > span {
   border-bottom: 3px solid hsl(0, 0%, 100%);
 }
 
-.dest-text h1 {
+.dest-text h1.dest {
   font-size: 100px;
   margin-top: 45px;
   margin-bottom: 15px;
-  transition: opacity 0.75s;
+  visibility: hidden;
 }
 
-.dest-text p {
+.dest-text p.dest {
   line-height: 32px;
   margin-top: 0;
   margin-bottom: 54px;
-  transition: opacity 0.75s;
+  visibility: hidden;
+}
+
+.dest-text h1.dest.fade,
+.dest-text p.dest.fade {
+  visibility: visible;
+  animation-name: fadeIn;
+  animation-duration: 1s;
 }
 
 .dest-text hr {
@@ -336,9 +358,15 @@ nav a > span {
   z-index: 1;
 }
 
-.dest-text div {
+.dest-text div.dest {
   display: flex;
-  transition: opacity 0.75s;
+  visibility: hidden;
+}
+
+.dest-text div.dest.fade {
+  visibility: visible;
+  animation-name: fadeIn;
+  animation-duration: 1s;
 }
 
 .dest-distance,
@@ -367,8 +395,8 @@ nav a > span {
   font-size: 28px;
 }
 /* DESTINATION PAGE END */
-
-
+/*
+/*
 /* CREW PAGE START */
 .crew-container {
   background-image: url("./images/crew/background-crew-desktop.jpg");
@@ -401,31 +429,39 @@ nav a > span {
   margin-bottom: 154px;
 }
 
-.crew-img-mobile,
+.crew-img-mobile.crew,
 .crew-tabs-mobile {
   display: none;
 }
 
-.crew-text h2 {
+.crew-text h2.crew {
   font-size: 32px;
   color: hsl(0, 0%, 100%, 0.5);
   margin-top: 0;
   margin-bottom: 15px;
-  transition: opacity 0.75s;
+  visibility: hidden;
 }
 
-.crew-text h1 {
+.crew-text h1.crew {
   font-size: 56px;
   margin-top: 0;
   margin-bottom: 25px;
-  transition: opacity 0.75s;
+  visibility: hidden;
 }
 
-.crew-text p {
+.crew-text p.crew {
   line-height: 32px;
   margin: 0;
   width: 445px;
-  transition: opacity 0.75s;
+  visibility: hidden;
+}
+
+.crew-text h2.crew.fade,
+.crew-text h1.crew.fade,
+.crew-text p.crew.fade {
+  visibility: visible;
+  animation-name: fadeIn;
+  animation-duration: 1s;
 }
 
 .crew-tabs {
@@ -456,17 +492,23 @@ nav a > span {
   background-color: hsl(0, 0%, 100%);
 }
 
-.crew-img {
+.crew-img.crew {
   max-width: 550px;
-  transition: opacity 0.75s;
+  visibility: hidden;
 }
 
-.crew-img img {
+.crew-img.crew.fade {
+  visibility: visible;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+}
+
+.crew-img.crew img {
   width: 100%;
 }
 /* CREW PAGE END */
-
-
+/*
+/*
 /* TECHNOLOGY PAGE START */
 .tech-container {
   background-image: url("./images/technology/background-technology-desktop.jpg");
@@ -559,32 +601,39 @@ nav a > span {
   letter-spacing: 2.7px;
 }
 
-.tech-text h1 {
+.tech-text h1.tech {
   font-size: 56px;
   margin-top: 0;
   margin-bottom: 18px;
-  transition: opacity 0.75s;
+  visibility: hidden;
 }
 
-.tech-text p {
+.tech-text p.tech {
   min-width: 445px;
   line-height: 32px;
   margin-top: 0;
   margin-bottom: 0;
-  transition: opacity 0.75s;
+  visibility: hidden;
 }
 
-.tech-img {
-  transition: opacity 0.75s;
+.tech-img.tech {
+  visibility: hidden;
 }
 
-.tech-img #imgTablet {
+.tech-text h1.tech.fade,
+.tech-text p.tech.fade,
+.tech-img.tech.fade {
+  visibility: visible;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+}
+
+.tech-img.tech #imgTablet {
   display: none;
-  transition: opacity 0.75s;
 }
-/* TECHNOLOGY PAGE START */
-
-
+/* TECHNOLOGY PAGE END */
+/*
+/*
 /* PAGE NOT FOUND */
 .error-msg {
   padding: 50px 25px;
@@ -616,7 +665,7 @@ nav a > span {
 
 
 /*** SMALL DEVICES ***/
-
+/*
 /* (LESS THAN 576PX) */
 @media (max-width: 575px) {
   .header {
@@ -702,11 +751,13 @@ nav a > span {
   }
 
   nav a.hidden {
+    pointer-events: none;
     opacity: 0;
-    transition: opacity 0.25s ease;
+    transition: pointer-events 0.1s, opacity 0.25s ease;
   }
 
   nav a.visible {
+    pointer-events: all;
     opacity: 1;
   }
 
@@ -739,9 +790,9 @@ nav a > span {
   }
 
   .home-content p,
-  .dest-text p,
-  .crew-text p,
-  .tech-text p {
+  .dest-text p.dest,
+  .crew-text p.crew,
+  .tech-text p.tech {
     font-size: 15px;
     line-height: 25px;
     width: 100%;
@@ -796,11 +847,11 @@ nav a > span {
     align-items: center;
   }
 
-  .dest-img {
+  .dest-img.dest {
     width: 45.3%;
   }
 
-  .dest-img img {
+  .dest-img.dest img {
     width: 100%;
   }
 
@@ -825,17 +876,17 @@ nav a > span {
     font-size: 14px;
   }
 
-  .dest-text h1 {
+  .dest-text h1.dest {
     font-size: 56px;
     margin-top: 28px;
     margin-bottom: 1px;
   }
 
-  .dest-text p {
+  .dest-text p.dest {
     margin-bottom: 32px;
   }
 
-  .dest-text div {
+  .dest-text div.dest {
     flex-direction: column;
     align-items: center;
   }
@@ -883,15 +934,21 @@ nav a > span {
     text-align: center;
   }
 
-  .crew-img-mobile {
+  .crew-img-mobile.crew {
     display: block;
     width: 100%;
     height: 224px;
     border-bottom: 1px solid hsl(231, 15%, 26%);
-    transition: opacity 0.75s;
+    visibility: hidden;
   }
 
-  .crew-img-mobile img {
+  .crew-img-mobile.crew.fade {
+    visibility: visible;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+  }
+
+  .crew-img-mobile.crew img {
     height: 100%;
   }
 
@@ -925,19 +982,19 @@ nav a > span {
     background-color: hsl(0, 0%, 100%);
   }
 
-  .crew-text h2 {
+  .crew-text h2.crew {
     font-size: 16px;
     margin-bottom: 8px;
   }
 
-  .crew-text h1,
-  .tech-text h1 {
+  .crew-text h1.crew,
+  .tech-text h1.tech {
     font-size: 24px;
     margin-bottom: 16px;
   }
 
   .crew-tabs,
-  .crew-img {
+  .crew-img.crew {
     display: none;
   }
 
@@ -991,28 +1048,27 @@ nav a > span {
     letter-spacing: 2.4px;
   }
 
-  .tech-text h1 {
+  .tech-text h1.tech {
     font-size: 24px;
     margin-bottom: 16px;
   }
 
-  .tech-text p {
+  .tech-text p.tech {
     min-width: 280px;
   }
 
-  .tech-img #imgDesktop {
+  .tech-img.tech #imgDesktop {
     display: none;
   }
 
-  .tech-img #imgTablet {
+  .tech-img.tech #imgTablet {
     display: block;
     width: 100%;
   }
 }
 
-
 /*** MEDIUM DEVICES ***/
-
+/*
 /* (FROM 576PX TO 992PX) */
 @media (min-width: 576px) and (max-width: 991px) {
   .header {
@@ -1072,9 +1128,9 @@ nav a > span {
   }
 
   .home-content p,
-  .dest-text p,
-  .crew-text p,
-  .tech-text p {
+  .dest-text p.dest,
+  .crew-text p.crew,
+  .tech-text p.tech {
     font-size: 16px;
     line-height: 28px;
   }
@@ -1123,11 +1179,11 @@ nav a > span {
     gap: 53px;
   }
 
-  .dest-img {
+  .dest-img.dest {
     width: 43.4%;
   }
 
-  .dest-img img {
+  .dest-img.dest img {
     width: 100%;
   }
 
@@ -1141,17 +1197,17 @@ nav a > span {
     width: 100%;
   }
 
-  .dest-text h1 {
+  .dest-text h1.dest {
     font-size: 80px;
     margin-top: 32px;
     margin-bottom: 8px;
   }
 
-  .dest-text p {
+  .dest-text p.dest {
     margin-bottom: 50px;
   }
 
-  .dest-text div {
+  .dest-text div.dest {
     justify-content: center;
   }
 
@@ -1186,17 +1242,17 @@ nav a > span {
     width: 100%;
   }
 
-  .crew-text h2 {
+  .crew-text h2.crew {
     font-size: 24px;
     margin-bottom: 8px;
   }
 
-  .crew-text h1 {
+  .crew-text h1.crew {
     font-size: 40px;
     margin-bottom: 16px;
   }
 
-  .crew-text p {
+  .crew-text p.crew {
     max-width: 590px;
     width: fit-content;
     height: 84px;
@@ -1215,7 +1271,7 @@ nav a > span {
     margin-right: 16px;
   }
 
-  .crew-img {
+  .crew-img.crew {
     min-height: 532px;
     max-height: 600px;
     max-width: 100%;
@@ -1224,7 +1280,7 @@ nav a > span {
     overflow-y: hidden;
   }
 
-  .crew-img img {
+  .crew-img.crew img {
     height: 100%;
   }
 
@@ -1287,25 +1343,24 @@ nav a > span {
     margin-bottom: 16px;
   }
 
-  .tech-text h1 {
+  .tech-text h1.tech {
     font-size: 40px;
     margin-bottom: 16px;
   }
 
-  .tech-img {
+  .tech-img.tech {
     width: 100%;
   }
 
-  .tech-img #imgDesktop {
+  .tech-img.tech #imgDesktop {
     display: none;
   }
 
-  .tech-img #imgTablet {
+  .tech-img.tech #imgTablet {
     display: block;
     width: 100%;
   }
 }
-
 
 /* (FROM 992PX TO 1200PX) */
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -1341,9 +1396,9 @@ nav a > span {
   }
 
   .home-content p,
-  .dest-text p,
-  .crew-text p,
-  .tech-text p {
+  .dest-text p.dest,
+  .crew-text p.crew,
+  .tech-text p.tech {
     font-size: 16px;
     line-height: 28px;
   }
@@ -1373,11 +1428,11 @@ nav a > span {
     margin-bottom: 60px;
   }
 
-  .dest-img {
+  .dest-img.dest {
     max-width: 350px;
   }
 
-  .dest-img img {
+  .dest-img.dest img {
     width: 100%;
   }
 
@@ -1394,13 +1449,13 @@ nav a > span {
     padding-bottom: 6px;
   }
 
-  .dest-text h1 {
+  .dest-text h1.dest {
     font-size: 65px;
     margin-top: 30px;
     margin-bottom: 7px;
   }
 
-  .dest-text p {
+  .dest-text p.dest {
     margin-bottom: 35px;
   }
 
@@ -1424,17 +1479,17 @@ nav a > span {
     margin-bottom: 124px;
   }
 
-  .crew-text h2 {
+  .crew-text h2.crew {
     font-size: 26px;
     margin-bottom: 10px;
   }
 
-  .crew-text h1,
-  .tech-text h1 {
+  .crew-text h1.crew,
+  .tech-text h1.tech {
     font-size: 44px;
   }
 
-  .crew-text p {
+  .crew-text p.crew {
     width: 400px;
   }
 
@@ -1445,7 +1500,7 @@ nav a > span {
     margin-right: 18px;
   }
 
-  .crew-img {
+  .crew-img.crew {
     max-width: 400px;
     max-height: 450px;
     margin-left: auto;
@@ -1485,22 +1540,21 @@ nav a > span {
     width: 420px;
   }
 
-  .tech-text p {
+  .tech-text p.tech {
     min-width: 420px;
   }
 
-  .tech-img {
+  .tech-img.tech {
     max-width: 420px;
   }
 
-  .tech-img img {
+  .tech-img.tech img {
     width: 100%;
   }
 }
 
-
 /*** LARGE DEVICES ***/
-
+/*
 /* (FROM 1200PX TO 1440PX) */
 @media (min-width: 1200px) and (max-width: 1439px) {
   .home-content {
@@ -1518,9 +1572,9 @@ nav a > span {
   }
 
   .home-content p,
-  .dest-text p,
-  .crew-text p,
-  .tech-text p {
+  .dest-text p.dest,
+  .crew-text p.crew,
+  .tech-text p.tech {
     font-size: 16px;
     line-height: 30px;
   }
@@ -1546,11 +1600,11 @@ nav a > span {
     margin-bottom: 60px;
   }
 
-  .dest-img {
+  .dest-img.dest {
     max-width: 400px;
   }
 
-  .dest-img img {
+  .dest-img.dest img {
     width: 100%;
   }
 
@@ -1567,13 +1621,13 @@ nav a > span {
     padding-bottom: 8px;
   }
 
-  .dest-text h1 {
+  .dest-text h1.dest {
     font-size: 80px;
     margin-top: 35px;
     margin-bottom: 10px;
   }
 
-  .dest-text p {
+  .dest-text p.dest {
     margin-bottom: 40px;
   }
 
@@ -1601,20 +1655,20 @@ nav a > span {
     width: 570px;
   }
 
-  .crew-text h2 {
+  .crew-text h2.crew {
     font-size: 28px;
   }
 
-  .crew-text h1,
-  .tech-text h1 {
+  .crew-text h1.crew,
+  .tech-text h1.tech {
     font-size: 52px;
   }
 
-  .crew-text p {
+  .crew-text p.crew {
     width: 400px;
   }
 
-  .crew-img {
+  .crew-img.crew {
     max-width: 480px;
     max-height: 550px;
   }
@@ -1643,15 +1697,14 @@ nav a > span {
     height: 70px;
   }
 
-  .tech-img {
+  .tech-img.tech {
     max-width: 450px;
   }
 
-  .tech-img img {
+  .tech-img.tech img {
     width: 100%;
   }
 }
-
 
 /* (1600PX AND UP) */
 @media (min-width: 1600px) {

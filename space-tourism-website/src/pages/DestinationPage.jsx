@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
+import initialData from "../data/data.json";;
 import Destination from "../components/Destination";
-import initialData from "../data/data.json";
 
 export default function DestinationPage() {
   const [data, setData] = useState(initialData.destinations);
@@ -10,6 +10,10 @@ export default function DestinationPage() {
     setTimeout(() => {
       document.getElementById("destination").classList.add("active");
     }, 50);
+
+    document
+      .querySelectorAll(".dest")
+      .forEach((element) => element.classList.add("fade"));
   }, []);
 
   return (

@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Header() {
   const toggleNav = () => {
@@ -14,7 +14,9 @@ export default function Header() {
 
   return (
     <div className="header">
-      <img className="logo" src="/images/shared/logo.svg" alt="logo" />
+      <Link className="logo-link" to={"/"}>
+        <img className="logo" src="/images/shared/logo.svg" alt="logo" />
+      </Link>
       <img
         className="nav-button active"
         src="/images/shared/icon-hamburger.svg"
