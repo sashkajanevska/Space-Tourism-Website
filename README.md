@@ -57,7 +57,7 @@ https://sensational-crepe-7f43cb.netlify.app/
 
 &nbsp;&nbsp; **5.** **Visit the link in your terminal** --> (CTRL + Click on http://localhost:5173)
 
-## Author
+## Authors
 
 👩🏻‍💻 Sashka Janevska
 
