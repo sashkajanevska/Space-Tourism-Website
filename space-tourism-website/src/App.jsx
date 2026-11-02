@@ -1,5 +1,10 @@
 import "./App.css";
-import { createBrowserRouter, Link, Outlet, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Link,
+  Outlet,
+  RouterProvider,
+} from "react-router";
 import Header from "./components/Header";
 import HomePage from "./pages/HomePage";
 import DestinationPage from "./pages/DestinationPage";
@@ -51,7 +56,6 @@ function App() {
     },
   ]);
 
-  
   return (
     <>
       <RouterProvider router={router} />
